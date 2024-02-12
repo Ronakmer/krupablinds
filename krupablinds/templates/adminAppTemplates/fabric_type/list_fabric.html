@@ -1,0 +1,84 @@
+
+{% extends 'adminAppTemplates/base.html' %}
+
+{% load static %}
+
+{% block body  %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Fabric Details</h1>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+
+
+    <div class="card">
+        <div class="card-header text-right">
+            {% comment %} <h3 class="card-title">DataTable with default features</h3> {% endcomment %}
+            <a href="{% url 'add_fabric' %}" class="btn btn-primary ">Add Fabric</a>
+
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in fabric_obj %}
+
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{data.fabric_name}}</td>
+                        <td>{{data.fabric_color}}</td>
+                        <td>{{data.fabric_price}}</td>
+                        <td>
+                            <div class="d-flex">
+                                <a href="{% url 'update_fabric' data.id %}" class="btn btn-primary shadow btn-xs sharp mr-2"
+                                   aria-label="Edit" tooltip-position="top">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+            
+                                <a href="{% url 'delete_fabric' data.id %}" class="btn btn-danger shadow btn-xs sharp "
+                                   aria-label="Delete" tooltip-position="top">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+            
+
+                        </td>
+                    </tr>
+                    {% endfor %} 
+
+                
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock body  %}

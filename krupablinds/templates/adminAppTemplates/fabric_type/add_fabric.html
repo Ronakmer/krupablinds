@@ -1,0 +1,76 @@
+
+{% extends 'adminAppTemplates/base.html' %}
+
+{% load static %}
+
+{% block body  %}
+
+
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>{{data}}</h1>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+        <!-- SELECT2 EXAMPLE -->
+        <div class="card card-default">
+            <!-- /.card-header -->
+            <div class="card-body">
+                <form action="{% url 'add_fabric'  %}" method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+
+                    <input type="hidden" id="fabric_id" value="{{fabric_obj.id}}" name="fabric_id">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Fabric Name</label>
+                                <input type="text" class="form-control" id="" name="fabric_name" value="{{fabric_obj.fabric_name}}" placeholder="Enter Fabric Name" required >
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Fabric Color</label>
+                                <input type="text" class="form-control" id="" name="fabric_color" value="{{fabric_obj.fabric_color}}" placeholder="Enter Fabric Color" required >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Fabric Price</label>
+                                <input type="number" class="form-control" id="" name="fabric_price" value="{{fabric_obj.fabric_price}}" placeholder="Enter Fabric Price" required >
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn me-2 btn-primary">Save</button>
+                        <a href="{% url 'show_fabric' %}"  class="btn btn-danger light">Cancel</a>
+                    </div>
+                </form>
+
+            </div>
+                <!-- /.col -->
+
+        </div>
+        <!-- /.card -->
+    </section>
+</div>
+
+
+{% endblock body  %}
