@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Krupa Blinds</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="Home.css">
+    <link rel=”stylesheet” href=”htpps://pyscript.net/alpha/pyscript.css” />
+
+    
+    </head>
+  <body class="div1 w-auto h-100" >
+    
+    
+    <div class="continer text-center">
+        <div class="row" style="padding-top: 100px;">
+            <div class="col"></div>
+            <div class="col" style="background-color: rgb(122, 5, 5);">
+                <h1 style="color: rgb(255, 255, 255);">KrupaBlinds</h1>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col" style="background-color: aliceblue;">
+                <h1 style="color: darkred;">Awning Cost</h1>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row" >
+            <div class="col"></div>
+            <div class="col" style="background-color: aliceblue;">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Length</label>
+                    <input type="text" name="Length" class="form-control" id="Length" >
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row ">
+            <div class="col"></div>
+            <div class="col" style="background-color: aliceblue;">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Width</label>
+                    <input type="text" name="Width" class="form-control" id="Width">
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row ">
+            <div class="col"></div>
+            <div class="col" style="background-color: aliceblue;">
+                <label for="formGroupExampleInput" class="form-label">Fabric Type</label>
+                <select class="form-select" name="febric" aria-label="Default select example">
+                    <option value="1">Plain</option>
+                    <option value="2">Patta</option>
+                  </select>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row ">
+            <div class="col"></div>
+            <div class="col" style="background-color: aliceblue;">
+                <label for="formGroupExampleInput" class="form-label">Awning Type</label>
+                <select class="form-select" name="febric" aria-label="Default select example">
+                    <option value="1">Indian</option>
+                    <option value="2">Mecanco</option>
+                    <option value="3">Meteor</option>
+                  </select>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row" >
+            <div class="col"></div>
+            <div class="col" style="background-color: aliceblue;">
+                <button type="submit" name="submit" class="btn btn-danger" style="margin:10px;">Submit</button>
+            </div>
+            <div class="col"></div>
+        </div>
+        
+        <div class="row" >
+            <div class="col"></div>
+            <div class="col" style="background-color: aliceblue;">
+                <label for="formGroupExampleInput" class="form-label">Total Cost</label>
+                
+            </div>
+            <div class="col"></div>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script defer src=”htpps://pyscript.net/alpha/pyscript.js”></script>
+    <!-- <py-script>
+        I=Indian();
+        class Indian:
+            
+            Arms=0;
+            HENDLE=210;
+            pipe=100;
+            FC=125;
+            Maj=2000;
+            CC=6;
+            CS=695;
+    
+            Arms5=800;
+            Arms6=850;
+            Arms7=900;
+            Arms8=1600;
+            Arms9=1700;
+            Arms10=1800;
+    
+            Gear1=650;
+            Gear2=850;
+            Gear3=1200;
+    
+            jointer=130;
+    
+            wc=200;
+    
+            HorcelPl=175;
+            HorcelPt=195;
+    
+    
+            def length():
+    
+                length=float(input("Enter Length OF Awning :"));
+                length = Element('Length').element.value;
+                if length<9:
+                    print("Length should be greate then 9ft.");
+                elif length<10:
+                    length=10;
+                return length;
+            length=length();
+    
+            def width():
+                width=int(input("Enter Width of Awning :"));
+                width=Element('Length').element.value;
+                l=length-2;
+                if width>l :
+                    print("Width should be less then ",l);
+                return width;
+            width=width();  
+    
+            def CenterSupport():
+                cs=0;
+                if length>15 and width>6 :
+                    cs=CS+(CS*18)/100+10;
+                return cs;
+            CS=CenterSupport();
+    
+            def FCC():
+                FCT=length*(FC+(FC*18)/100+10);
+                if length>18:
+                    FCT=FCT+jointer+(jointer*18)/100;
+                return FCT;
+            FC=FCC();
+    
+            def Arms():
+                if width==5 and length<=15:
+                    Arms=Arms5+(Arms5*18)/100+10;
+                    Arms=Arms*2;
+                elif width==5 and length<=18:
+                    Arms=Arms5+(Arms5*18)/100+10;
+                    Arms=Arms*3;
+                elif width==5 and length<=25:
+                    Arms=Arms5+(Arms5*18)/100+10;
+                    Arms=Arms*4;
+                elif width==5 and length<=30:
+                    Arms=Arms5+(Arms5*18)/100+10;
+                    Arms=Arms*5;
+                elif width==6 and length<=15:
+                    Arms=Arms6+(Arms6*18)/100+10;
+                    Arms=Arms*2;
+                elif width==6 and length<=19:
+                    Arms=Arms6+(Arms6*18)/100+10;
+                    Arms=Arms*3;
+                elif width==6 and length<=27:
+                    Arms=Arms6+(Arms6*18)/100+10;
+                    Arms=Arms*4;
+                elif width==6 and length<=30:
+                    Arms=Arms6+(Arms6*18)/100+10;
+                    Arms=Arms*5;
+                elif width==7 and length<=15:
+                    Arms=Arms7+(Arms7*18)/100+10;
+                    Arms=Arms*2;
+                elif width==7 and length<=20:
+                    Arms=Arms7+(Arms7*18)/100+10;
+                    Arms=Arms*3;
+                elif width==7 and length<=27:
+                    Arms=Arms7+(Arms7*18)/100+10;
+                    Arms=Arms*4;
+                elif width==7 and length<=30:
+                    Arms=Arms7+(Arms7*18)/100+10;
+                    Arms=Arms*5;
+                elif width==8 and length<=16:
+                    Arms=Arms8+(Arms8*18)/100+10;
+                    Arms=Arms*2;
+                elif width==8 and length<=21:
+                    Arms=Arms8+(Arms8*18)/100+10;
+                    Arms=Arms*3;
+                elif width==8 and length<=28:
+                    Arms=Arms8+(Arms8*18)/100+10;
+                    Arms=Arms*4;
+                elif width==8 and length<=30:
+                    Arms=850+(850*18)/100+10;
+                    Arms=Arms*5;
+                elif width==9 and length<=16:
+                    Arms=Arms9+(Arms9*18)/100+10;
+                    Arms=Arms*2;
+                elif width==9 and length<=22:
+                    Arms=Arms9+(Arms9*18)/100+10;
+                    Arms=Arms*3;
+                elif width==9 and length<=28:
+                    Arms=Arms9+(Arms9*18)/100+10;
+                    Arms=Arms*4;
+                elif width==9 and length<=30:
+                    Arms=Arms9+(Arms9*18)/100+10;
+                    Arms=Arms*5;
+                elif width==10 and length<=16:
+                    Arms=Arms10+(Arms10*18)/100+10;
+                    Arms=Arms*2;
+                elif width==10 and length<=23:
+                    Arms=Arms10+(Arms10*18)/100+10;
+                    Arms=Arms*3;
+                elif width==10 and length<=30:
+                    Arms=850+(850*18)/100+10;
+                    Arms=Arms*4;
+                return Arms;
+    
+                    
+    
+    
+    
+            def gear():
+                if width<=5 and length<=15 or length<=12 and width<=7:
+                    GEAR=Gear1+(Gear1*18)/100+10;
+                elif width>7 and length<=15:
+                    GEAR=Gear2+(Gear2*18)/100+10;
+                elif width>7 and length>15:
+                    GEAR=Gear3+(Gear3*18)/100+10;
+                else:
+                    GEAR=Gear3+(Gear3*18)/100+10;
+                return GEAR;
+            Gear=gear();
+    
+    
+            plain=30;
+            patta=40;
+            FT=input("TYPE OF FABRIC Plain OR Patta:");
+            def febric():
+                
+                if FT=="Plain":
+                    febric=plain*(length*(width+2.3));
+                elif FT=="Patta":
+                    febric=patta*(length*(width+2.3));
+                return febric;
+            febric=febric();
+    
+            def WallClam():
+                if length<=12:
+                    WC=wc*2;
+                elif length>12:
+                    WC=wc*(length/5);
+                return WC;
+            wc=WallClam();
+    
+            def FCJ():
+                
+                if length>18:
+                    J=jointer;
+                else:
+                    J=0;
+                return J;
+            jointer=FCJ();
+    
+            pipe=pipe*length;
+    
+            CC=CC*(length/2);
+    
+            print("C-CLam =",CC);
+            print("PIPE=",pipe);
+            print("Gear=",Gear);
+            print("ARMS=",Arms());
+            print("Febric=",febric);
+            print("First Chanal=",FC)
+            print("Wall Clam=",wc);
+            print("Jointer =",jointer);
+    
+            Total=Gear+pipe+Arms()+febric+CC+FC+Maj+jointer+HENDLE;
+            AvgC=Total/(length*(width+1));
+            # TWC=Gear+pipe+Arms()+febric+CC+FC+Maj+HENDLE+jointer+wc;
+            # AvgTWC=TWC/(length*(width+1));
+            print("Total=",Total);
+            print("Average Cost =",AvgC);
+            # print("Total with clamp =",TWC);
+            # print("Average Cost with clamp =",AvgTWC);
+            def Horcel():
+                if FT=="Plain":
+                    Horcel=HorcelPl*(length*(width+1));
+                elif FT=="Patta":
+                    Horcel=HorcelPt*(length*(width+1));
+                return Horcel;
+    
+            Profit=Horcel()-Total;
+            print("Horcel Cost =",Horcel());
+            print("Profit =",Profit);
+    </py-script> -->
+    </body>
+
+</html>
